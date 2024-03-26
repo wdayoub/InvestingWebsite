@@ -1,14 +1,15 @@
 /* Global Styles */
 
-html {
-  height: 100%;
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
 }
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0; /* Removes the default margin */
+.main-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px; /* Adds padding to the top, right, bottom, and left */
+  max-width: 1200px; /* Adjust this value based on your design preference */
 }
 /* Header Styles */
 header {
@@ -21,7 +22,8 @@ header {
     margin-right: 20px;
     margin-bottom: 10px;
     width: 45%; 
-    height: auto; 
+    height: auto;
+    border-radius: 10px;
 }
 .right-img-vert{
   float: right;
@@ -29,13 +31,23 @@ header {
     margin-bottom: 10px;
     width: 30%; 
     height: 30%; 
+    border-radius: 10px;
 }
 .right-img {
     float: left;
     margin-right: 20px;
     margin-bottom: 10px;
     width: 45%; 
-    height: auto; 
+    height: auto;
+    border-radius: 10px; 
+}
+.left-img, .right-img, .right-img-vert {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.left-img:hover, .right-img:hover, .right-img-vert:hover {
+  transform: scale(1.03); /* Slight zoom effect on hover */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Adds shadow for a 3D effect */
 }
 /* Navigation Styles */
 nav {
@@ -63,7 +75,7 @@ nav ul li a {
     transition: background-color 0.3s;
 }
 
-
+/*banner styles*/
 .banner-container {
     position: relative;
     display: flex;
@@ -84,7 +96,7 @@ nav ul li a {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6); /* Black color with opacity */
+    background-color: rgba(0, 0, 0, 0.6); 
     z-index: 1;
 }
 
@@ -96,13 +108,13 @@ nav ul li a {
     color: white; 
     text-align: center; 
     z-index: 2; 
-    font-size: 2em; /* Increased font size */
+    font-size: 2em; 
 }
 
 /* Main Styles */
 main {
   padding: 20px;
-  padding-bottom: 70px; /* Adjust this value based on the footer's height */
+  padding-bottom: 70px; 
   text-align: left;
 }
 
@@ -116,6 +128,7 @@ main article p {
     font-size: 18px;
     line-height: 1.6;
     margin-top: 10px;
+    color: #0a0a0a;
 }
 
 /* Footer Styles */
@@ -132,6 +145,14 @@ footer {
 
 footer p {
     margin: 0;
+}
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto; 
 }
 /* unvisited link */
 a:link { 
@@ -177,7 +198,7 @@ nav ul li a {
   
   /* Hover effect for navigation links */
   nav ul li a:hover, nav ul li a:focus {
-    color: #FFD700; /* Gold color on hover for a rich look */
+    color: #FFD700; 
     background-color: #0056b3;
   }
   
@@ -189,7 +210,7 @@ nav ul li a {
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: #FFD700; /* Same gold color as the hover state for consistency */
+    background-color: #FFD700; 
     visibility: hidden;
     transform: scaleX(0);
     transition: visibility 0s, transform 0.3s ease-in-out;
@@ -199,13 +220,54 @@ nav ul li a {
     visibility: visible;
     transform: scaleX(1);
   }
- 
-  .img-tilt-hover {
-    perspective: 1000px;
-    display: inline-block;
-    transition: transform 0.25s ease-out;
+  
+  /*styling for the list*/
+  .styled-list {
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 5px;
+    display: flex; /* Flex container to center list items */
+    flex-direction: column; /* Stack list items vertically */
+    align-items: left;
+
   }
   
-  .img-tilt-hover:hover {
-    transform: rotateY(90deg);
+  .styled-list a:link, .styled-list a:visited {
+    color: white;
+    background-color: #42464e;
+    display: block;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Adds rounded corners */
+    margin-bottom: 10px; /* Adds space between list items */
   }
+  
+  .styled-list a:hover, .styled-list a:focus {
+    background-color: #0056b3;
+    color: #FFD700; /* Changes text color to gold on hover/focus */
+  }
+  
+  /* Animated underline effect for .styled-list links */
+  .styled-list a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFD700; /* Gold underline color */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: visibility 0s, transform 0.3s ease-in-out;
+    border-radius: 10px; /* Ensures the underline effect also respects rounded corners */
+  }
+  
+  .styled-list a:hover::before, .styled-list a:focus::before {
+    visibility: visible;
+    transform: scaleX(1); /* Expands the underline across the link on hover/focus */
+  }
+  
