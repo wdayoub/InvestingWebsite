@@ -1,10 +1,15 @@
 /* Global Styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
+
+html {
+  height: 100%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0; /* Removes the default margin */
+}
 /* Header Styles */
 header {
     background-color: #333;
@@ -17,6 +22,13 @@ header {
     margin-bottom: 10px;
     width: 45%; 
     height: auto; 
+}
+.right-img-vert{
+  float: right;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 30%; 
+    height: 30%; 
 }
 .right-img {
     float: left;
@@ -89,8 +101,9 @@ nav ul li a {
 
 /* Main Styles */
 main {
-    padding: 20px;
-    text-align: left;
+  padding: 20px;
+  padding-bottom: 70px; /* Adjust this value based on the footer's height */
+  text-align: left;
 }
 
 main article h2 {
@@ -107,11 +120,14 @@ main article p {
 
 /* Footer Styles */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 footer p {
