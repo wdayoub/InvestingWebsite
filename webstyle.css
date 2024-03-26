@@ -1,0 +1,195 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+.left-img {
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 45%; 
+    height: auto; 
+}
+.right-img {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 45%; 
+    height: auto; 
+}
+/* Navigation Styles */
+nav {
+    background-color: #6a89cc; 
+  }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+
+.banner-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.banner-image {
+    width: 100%;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Black color with opacity */
+    z-index: 1;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: white; 
+    text-align: center; 
+    z-index: 2; 
+    font-size: 2em; /* Increased font size */
+}
+
+/* Main Styles */
+main {
+    padding: 20px;
+    text-align: left;
+}
+
+main article h2 {
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+main article p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+}
+/* unvisited link */
+a:link { 
+    color: #0645AD; 
+    text-decoration: none; 
+  }
+  
+  a:visited { 
+    color: #0B0080; 
+  }
+  /* mouse over link */
+  a:hover { 
+    font-size: 19px;
+    text-decoration: undeline; 
+    color: #0004ff; 
+  }
+  /* selected link */
+  a:active { 
+    color: #D0342C; 
+  }
+
+  nav ul li a:link,
+nav ul li a:visited {
+  color: white;
+  background-color:  #6a89cc;
+ 
+}
+nav ul li a:hover {
+    background-color: #0056b3; 
+    
+  }
+  /* Navigation link styles */
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Hover effect for navigation links */
+  nav ul li a:hover, nav ul li a:focus {
+    color: #FFD700; /* Gold color on hover for a rich look */
+    background-color: #0056b3;
+  }
+  
+  /* Animated underline effect */
+  nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFD700; /* Same gold color as the hover state for consistency */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: visibility 0s, transform 0.3s ease-in-out;
+  }
+  
+  nav ul li a:hover::before, nav ul li a:focus::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+ 
+  .img-tilt-hover {
+    perspective: 1000px;
+    display: inline-block;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .img-tilt-hover:hover {
+    transform: rotateY(90deg);
+  }
