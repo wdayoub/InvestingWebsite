@@ -271,3 +271,39 @@ nav ul li a {
     transform: scaleX(1); /* Expands the underline across the link on hover/focus */
   }
   
+  .styled-lists-container {
+    padding: 20px;
+    background-color: #333;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  .styled-lists {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+  }
+  
+  .styled-lists li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .styled-lists li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #6a89cc;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+}
